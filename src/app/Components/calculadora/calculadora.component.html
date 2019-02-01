@@ -1,3 +1,32 @@
-<p>
-  calculadora works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+        <div class="card text-white bg-info center-block">
+            <div class="card-body">
+
+              <div>
+                <input type="number">
+                &nbsp;
+                <span>{{ this.operacion }}</span>
+                &nbsp;
+                <input type="number">
+              </div>
+              <div>
+                  <button (click)="CambiarOp('+')" type="button" class="btn btn-secondary">+</button>&nbsp;
+                  <button (click)="CambiarOp('-')" type="button" class="btn btn-secondary">-</button>&nbsp;
+                  <button (click)="CambiarOp('/')" type="button" class="btn btn-secondary">/</button>&nbsp;
+                  <button (click)="CambiarOp('*')" type="button" class="btn btn-secondary">x</button>&nbsp;
+                  <button type="button" class="btn btn-success">Ejecutar</button>
+              </div>
+            </div>
+          </div>
+
+    </div>
+    <div class="col-6">
+
+    </div>
+  </div>
+</div>
+
+

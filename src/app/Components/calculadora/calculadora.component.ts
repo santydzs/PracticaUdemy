@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculadoraComponent implements OnInit {
 
-  constructor() { }
+  operacion: string;
+
+  constructor() {
+    this.operacion = "+";
+   }
 
   ngOnInit() {
   }
 
+  CambiarOp(signo: string): void{
+    this.operacion = signo;
+  }  
 }
