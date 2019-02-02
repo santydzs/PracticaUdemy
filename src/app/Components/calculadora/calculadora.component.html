@@ -6,25 +6,36 @@
             <div class="card-body">
 
               <div>
-                <input type="number">
+                <input [(ngModel)]="this.campo1" type="number">
                 &nbsp;
                 <span>{{ this.operacion }}</span>
                 &nbsp;
-                <input type="number">
+                <input [(ngModel)]="this.campo2" type="number">
+                &nbsp;<span>=</span>&nbsp;
+                {{this.resultado}}
               </div>
+              <br>
               <div>
                   <button (click)="CambiarOp('+')" type="button" class="btn btn-secondary">+</button>&nbsp;
                   <button (click)="CambiarOp('-')" type="button" class="btn btn-secondary">-</button>&nbsp;
                   <button (click)="CambiarOp('/')" type="button" class="btn btn-secondary">/</button>&nbsp;
-                  <button (click)="CambiarOp('*')" type="button" class="btn btn-secondary">x</button>&nbsp;
-                  <button type="button" class="btn btn-success">Ejecutar</button>
+                  <button (click)="CambiarOp('x')" type="button" class="btn btn-secondary">x</button>&nbsp;
+                  <button (click)="Ejecutar()" type="button" class="btn btn-success">Ejecutar</button>
               </div>
             </div>
+          </div>
+          <br>
+          <div>
+            <button (click)="this.visible = !this.visible" type="button" class="btn btn-info">
+              Mostra/Ocultar el historial
+            </button>
           </div>
 
     </div>
     <div class="col-6">
-
+      <ul *ngIf="this.visible" class="list-group">
+        <li *ngFor="let item of this.historial" class="list-group-item">{{item}}</li>
+      </ul>
     </div>
   </div>
 </div>
