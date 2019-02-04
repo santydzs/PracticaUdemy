@@ -1,20 +1,25 @@
+//librerias angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 
+//rutas
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
+//components
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { CalculadoraComponent } from './Components/calculadora/calculadora.component';
-import { FooterComponent } from './Components/footer/footer.component'
+import { FooterComponent } from './Components/footer/footer.component';
+import { WitcherListComponent } from './Components/witcher-list/witcher-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CalculadoraComponent,
-    FooterComponent
+    FooterComponent,
+    WitcherListComponent
   ],
   imports: [
     BrowserModule,
