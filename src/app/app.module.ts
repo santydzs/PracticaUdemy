@@ -2,11 +2,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 //rutas
 import { AppRoutingModule } from './app-routing.module';
 
-//components
+//Services
+//es mejor declararlos explicitamente en cada proveedor, porque si en el decorador se pone en root
+//los instanciara todo el tiempo en la aplicacion
+import { WitcherService } from './Services/witcher/witcher.service';
+
+//Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { CalculadoraComponent } from './Components/calculadora/calculadora.component';
@@ -24,9 +30,10 @@ import { WitcherListComponent } from './Components/witcher-list/witcher-list.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [WitcherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

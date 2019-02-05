@@ -9,8 +9,13 @@ const routes: Routes = [{
   component: CalculadoraComponent
 },
 {
-  path: 'withcer-list',
+  path: 'witcher-list',
   component: WitcherListComponent
+},
+{
+  path: '**',
+  pathMatch: 'full',
+  redirectTo:'calc'
 }];
 
 @NgModule({
