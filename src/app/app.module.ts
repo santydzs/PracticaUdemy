@@ -18,7 +18,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { CalculadoraComponent } from './Components/calculadora/calculadora.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { WitcherListComponent } from './Components/witcher-list/witcher-list.component';
-import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component'
+import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component';
+import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { WitcherContraComponent } from './Components/witcher-contra/witcher-cont
     CalculadoraComponent,
     FooterComponent,
     WitcherListComponent,
-    WitcherContraComponent
+    WitcherContraComponent,
+    WitcherPersonComponent
   ],
   imports: [
     BrowserModule,

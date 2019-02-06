@@ -19,6 +19,36 @@ export class WitcherService {
     "libro8":"Poco sabía el brujo Geralt de Rivia lo que le esperaba al acudir a la villa costera de Kerack. Primero fue acusado injustamente de desfalco, luego fue misteriosamente liberado bajo fianza, y finalmente descubrió que sus preciadas espadas, dejadas en depósito al entrar en la ciudad, habían desaparecido. Demasiadas casualidades, en efecto, y m íxime cuando tras ellas est í la atractiva hechicera Lytta Neyd, llamada Coral. De esta manera, Geralt de Rivia se encuentra de nuevo implicado en los escabrosos asuntos de los magos, y ni la fiel (aunque ocasionalmente engorrosa) compañía del trovador Jaskier, ni el recuerdo de su amada Yennefer, ni toda su fama como implacable cazador de monstruos podr ín evitar que se vea cada vez m ís envuelto en una oscura trama. M ís bien al contrario. Estación de tormentas es el esperado regreso de Andrzej Sapkowski al mundo de Geralt de Rivia, su creación de fama mundial. En esta precuela de la Saga vuelven a brillar las virtudes que le han convertido en, posiblemente, el mejor escritor contempor íneo de fantasía: su estilo inimitable, su íspero realismo temperado por el humor negro y su vigor aventurero. ´Un artista de enorme originalidad (...) Las im ígenes que crea se quedan para siempre en la memoria (...) Lectura apasionante, literatura de primera fila, y uno de los frentes de la vanguardia de la narrativa europea.´ --Andrés Ib íñez en ABC"
   }
 
+  private Personajes = [{
+    "id":"geralt",
+    "nombre":"Geralt de Rivia",
+    "raza":"Humano",
+    "genero":"Masculino",
+    "profesion":"Brujo"
+  },
+  {
+    "id":"ciri",
+    "nombre":"Cirilla Fiona Elen Riannon",
+    "raza":"Humano",
+    "genero":"Femenino",
+    "profesion":"Bruja"
+  },
+  {
+    "id":"triss",
+    "nombre":"Triss Merigold",
+    "raza":"Humano",
+    "genero":"Femenino",
+    "profesion":"Mago"
+  },
+  {
+    "id":"yennefer",
+    "nombre":"Yennefer of Vengerberg",
+    "raza":"Quadroon",
+    "genero":"Femenino",
+    "profesion":"Mago"
+  }
+]
+
   constructor(private http: HttpClient) { }
 
   //consulta a la api rest para obtener toda la lista de libros
@@ -29,5 +59,14 @@ export class WitcherService {
   //consulta el object que contiene la leyenda de las contra tapas
   public getcontra(id:string):string{
     return this.contratapas[id];
+  }
+
+  //Buscador de personajes
+  public getper(id:string):object{
+    if(id != undefined){
+      return this.Personajes.find(x => x["id"] == id.toLowerCase());
+    }else{
+      return undefined;
+    }
   }
 }

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CalculadoraComponent } from './Components/calculadora/calculadora.component';
 import { WitcherListComponent } from './Components/witcher-list/witcher-list.component'
 import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component'
+import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component'
 
 const routes: Routes = [{
   path: 'calc',
@@ -18,13 +19,17 @@ const routes: Routes = [{
   component: WitcherContraComponent
 },
 {
+  path: 'witcher-person/:texto',
+  component: WitcherPersonComponent
+},
+{
   path: '**',
   pathMatch: 'full',
   redirectTo:'calc'
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
