@@ -25,11 +25,12 @@ export class WitcherListComponent implements OnInit {
 
   ParseLibro(libro:any){
     var lib = new Libro();
-    lib.img = libro["img"];
+    lib.img = '../../../assets/' + libro["img"];
     lib.titulo = libro["Titulo"];
     lib.paginas = libro["Paginas"];
     lib.publicacion = libro["publicacion"];
+    lib.id = libro["img"];
+    lib.id = lib.id.split('.')[0];
     this.libros.push(lib);
-    console.log(this.libros);
   }
 }

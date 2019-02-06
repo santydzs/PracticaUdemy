@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CalculadoraComponent } from './Components/calculadora/calculadora.component';
 import { WitcherListComponent } from './Components/witcher-list/witcher-list.component'
+import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component'
 
 const routes: Routes = [{
   path: 'calc',
@@ -11,6 +12,10 @@ const routes: Routes = [{
 {
   path: 'witcher-list',
   component: WitcherListComponent
+},
+{
+  path: 'witcher-contra/:id',
+  component: WitcherContraComponent
 },
 {
   path: '**',

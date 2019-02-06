@@ -17,7 +17,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { CalculadoraComponent } from './Components/calculadora/calculadora.component';
 import { FooterComponent } from './Components/footer/footer.component';
-import { WitcherListComponent } from './Components/witcher-list/witcher-list.component'
+import { WitcherListComponent } from './Components/witcher-list/witcher-list.component';
+import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { WitcherListComponent } from './Components/witcher-list/witcher-list.com
     HeaderComponent,
     CalculadoraComponent,
     FooterComponent,
-    WitcherListComponent
+    WitcherListComponent,
+    WitcherContraComponent
   ],
   imports: [
     BrowserModule,

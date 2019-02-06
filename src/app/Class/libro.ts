@@ -3,4 +3,5 @@ export class Libro {
     public paginas:number;
     public img:string;
     public publicacion:Date;
+    public id:string;
 }
