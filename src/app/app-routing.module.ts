@@ -14,7 +14,7 @@ const routes: Routes = [{
   component: WitcherListComponent
 },
 {
-  path: 'witcher-contra/:id',
+  path: 'witcher-contra/:id/:titulo',
   component: WitcherContraComponent
 },
 {

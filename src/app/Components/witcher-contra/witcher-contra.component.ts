@@ -10,14 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class WitcherContraComponent implements OnInit {
   private codigo:string;
   private leyenda:string;
+  private titulo:string;
 
   constructor(private service:WitcherService, private ruta:ActivatedRoute) {
-    this.ruta.params.subscribe(params => {this.codigo = params['id']});
+    this.ruta.params.subscribe(params => {this.codigo = params['id'],this.titulo = params["titulo"]});
    }
 
   ngOnInit() {
     this.leyenda = this.service.getcontra(this.codigo);
-    console.log(this.leyenda);
   }
 
 }
