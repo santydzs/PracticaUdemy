@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WitcherService } from '../../Services/witcher/witcher.service';
 import { Libro } from '../../Class/libro';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-witcher-list',
@@ -10,17 +9,21 @@ import { Observable } from 'rxjs';
 })
 export class WitcherListComponent implements OnInit {
   libros: Array<Libro> = new Array<Libro>();
+  error: boolean = false;
+  codigo:string;
 
-  constructor(private service:WitcherService) {
-
-   }
+  constructor(private service:WitcherService) { }
 
   ngOnInit() {
     this.service.getall().subscribe(
       //ejecucion en caso que la respuesta sea correcta (200)
-      libros => libros.forEach(libro => this.ParseLibro(libro)) ,
+      libros => libros.forEach(libro => this.ParseLibro(libro)),
+
       //ejecucion en caso que sea erronea (!200)
-      x => console.log(x));
+      err => {
+        this.error = true;
+        this.codigo = err['status'];
+      });
   }
 
   ParseLibro(libro:any){

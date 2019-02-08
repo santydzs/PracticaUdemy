@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router ,ActivatedRoute } from '@angular/router';
 import { WitcherService } from '../../Services/witcher/witcher.service';
 
 @Component({
@@ -10,8 +10,9 @@ import { WitcherService } from '../../Services/witcher/witcher.service';
 export class WitcherPersonComponent implements OnInit {
   private personaje:object = {};
   private texto:string;
+  private contador: number = 5;
 
-  constructor(private ruta:ActivatedRoute,private servicio:WitcherService){  }
+  constructor(private ruta:ActivatedRoute,private servicio:WitcherService, private enrutador:Router){  }
 
   ngOnInit() {
     this.ruta.params.subscribe(params => {
@@ -21,4 +22,18 @@ export class WitcherPersonComponent implements OnInit {
     
   }
 
+  timeout():void{
+    setTimeout(()=>{
+      this.contador--;
+    },1000);
+  }
+
+  ngAfterViewChecked(){
+    if(this.personaje == undefined){
+      this.timeout();
+      if(this.contador == 0){
+        this.enrutador.navigate(['/']);
+      }
+    }
+  }
 }

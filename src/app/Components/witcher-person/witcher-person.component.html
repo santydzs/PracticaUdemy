@@ -1,9 +1,11 @@
-<div *ngIf="this.personaje != undefined">
-  Nombre: {{this.personaje.nombre}} <br>
-  Raza: {{this.personaje.raza}} <br>
-  Genero: {{this.personaje.genero}} <br>
-  Profesion: {{this.personaje.profesion}} <br>
+<div *ngIf="this.personaje != undefined" class="alert alert-secondary" role="alert">
+  <div>
+    Nombre: {{this.personaje.nombre}} <br>
+    Raza: {{this.personaje.raza}} <br>
+    Genero: {{this.personaje.genero}} <br>
+    Profesion: {{this.personaje.profesion}} <br>
+  </div>
 </div>
-<p *ngIf="this.personaje == undefined">
-  no se encontraron resultados
-</p>
+<div *ngIf="this.personaje == undefined" class="alert alert-danger" role="alert">
+  No se encontraron resultados.. redireccionando en {{this.contador}}
+</div>

@@ -19,7 +19,9 @@ import { CalculadoraComponent } from './Components/calculadora/calculadora.compo
 import { FooterComponent } from './Components/footer/footer.component';
 import { WitcherListComponent } from './Components/witcher-list/witcher-list.component';
 import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component';
-import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component'
+import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component';
+import { WitcherListCardComponent } from './Components/witcher-list-card/witcher-list-card.component';
+import { MainFatherComponent } from './Components/01 pipe section/main-father/main-father.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { WitcherPersonComponent } from './Components/witcher-person/witcher-pers
     FooterComponent,
     WitcherListComponent,
     WitcherContraComponent,
-    WitcherPersonComponent
+    WitcherPersonComponent,
+    WitcherListCardComponent,
+    MainFatherComponent
   ],
   imports: [
     BrowserModule,

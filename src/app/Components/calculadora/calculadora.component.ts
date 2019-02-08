@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { resource } from 'selenium-webdriver/http';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-calculadora',
   templateUrl: './calculadora.component.html',
   styleUrls: ['./calculadora.component.css']
 })
-export class CalculadoraComponent implements OnInit {
+export class CalculadoraComponent {
 
   operacion: string;
   campo1: number;
@@ -23,9 +22,6 @@ export class CalculadoraComponent implements OnInit {
     this.visible = false;
     this.historial = [];
    }
-
-  ngOnInit() {
-  }
 
   CambiarOp(signo: string): void{
     this.operacion = signo;
