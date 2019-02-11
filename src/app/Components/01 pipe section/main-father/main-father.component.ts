@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-father.component.css']
 })
 export class MainFatherComponent implements OnInit {
+  money:number = 25677.5;
+
+  promesa = new Promise((resolve,reject) => {
+    setTimeout(()=>
+      resolve('llego los datos')
+    , 2500);
+  });
 
   constructor() { }
 

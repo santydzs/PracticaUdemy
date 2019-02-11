@@ -1,1 +1,37 @@
-<h1>Seccion de pipes del curso</h1>
+<div class="container">
+    <h2>Seccion de pipes del curso</h2>
+
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Valor</th>
+            <th scope="col">Pipe</th>
+            <th scope="col">Resultado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{this.money}}</td>
+            <td>currency:'EUR'</td>
+            <td>{{this.money | currency:'EUR'}}</td>
+        </tr>
+        <tr>
+            <td>{{this.money}}</td>
+            <td>currency</td>
+            <td>{{this.money | currency}}</td>
+        </tr>
+        <tr>
+            <td>{{this.money}}</td>
+            <td>currency:'EUR':false:'4.0-0'</td>
+            <td>{{this.money | currency:'EUR':false:'4.0-0'}}</td>
+        </tr>
+        <tr>
+            <td>{{this.promesa}}</td>
+            <td>async</td>
+            <td>{{this.promesa | async}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
