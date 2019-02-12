@@ -21,7 +21,11 @@ import { WitcherListComponent } from './Components/witcher-list/witcher-list.com
 import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component';
 import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component';
 import { WitcherListCardComponent } from './Components/witcher-list-card/witcher-list-card.component';
-import { MainFatherComponent } from './Components/01 pipe section/main-father/main-father.component'
+import { MainFatherComponent } from './Components/01 pipe section/main-father/main-father.component';
+
+//Pipes
+import { ContadorPipe } from './Pipes/contador.pipe';
+import { DomseguroPipe } from './Pipes/domseguro.pipe'
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { MainFatherComponent } from './Components/01 pipe section/main-father/ma
     WitcherContraComponent,
     WitcherPersonComponent,
     WitcherListCardComponent,
-    MainFatherComponent
+    MainFatherComponent,
+    ContadorPipe,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

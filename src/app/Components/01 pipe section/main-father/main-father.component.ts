@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainFatherComponent implements OnInit {
   money:number = 25677.5;
+  frase:string = 'cantidad de palabras';
 
   promesa = new Promise((resolve,reject) => {
     setTimeout(()=>
