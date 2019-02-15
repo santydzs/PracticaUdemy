@@ -6,6 +6,8 @@ import { WitcherListComponent } from './Components/witcher-list/witcher-list.com
 import { WitcherContraComponent } from './Components/witcher-contra/witcher-contra.component'
 import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component'
 import { MainFatherComponent } from './Components/01 pipe section/main-father/main-father.component'
+import { MusicHomeComponent } from './Components/02 music app/music-home/music-home.component';
+import { SearchSpotiComponent } from './Components/02 music app/search-spoti/search-spoti.component';
 
 const routes: Routes = [{
   path: 'calc',
@@ -26,6 +28,14 @@ const routes: Routes = [{
 {
   path: 'pipes-father',
   component: MainFatherComponent
+},
+{
+  path: 'music-home',
+  component: MusicHomeComponent
+},
+{
+  path: 'search-spoti',
+  component: SearchSpotiComponent
 },
 {
   path: '**',

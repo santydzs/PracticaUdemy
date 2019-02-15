@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 //es mejor declararlos explicitamente en cada proveedor, porque si en el decorador se pone en root
 //los instanciara todo el tiempo en la aplicacion
 import { WitcherService } from './Services/witcher/witcher.service';
+import { ApiSpotifyService } from './Services/spotify/api-spotify.service';
 
 //Components
 import { AppComponent } from './app.component';
@@ -22,10 +23,14 @@ import { WitcherContraComponent } from './Components/witcher-contra/witcher-cont
 import { WitcherPersonComponent } from './Components/witcher-person/witcher-person.component';
 import { WitcherListCardComponent } from './Components/witcher-list-card/witcher-list-card.component';
 import { MainFatherComponent } from './Components/01 pipe section/main-father/main-father.component';
+import { MusicHomeComponent } from './Components/02 music app/music-home/music-home.component'
+import { AlbumCardComponent } from './Components/02 music app/album-card/album-card.component';
+import { SearchSpotiComponent } from './Components/02 music app/search-spoti/search-spoti.component';
 
 //Pipes
 import { ContadorPipe } from './Pipes/contador.pipe';
-import { DomseguroPipe } from './Pipes/domseguro.pipe'
+import { DomseguroPipe } from './Pipes/domseguro.pipe';
+
 
 @NgModule({
   declarations: [
@@ -39,15 +44,18 @@ import { DomseguroPipe } from './Pipes/domseguro.pipe'
     WitcherListCardComponent,
     MainFatherComponent,
     ContadorPipe,
-    DomseguroPipe
+    DomseguroPipe,
+    MusicHomeComponent,
+    AlbumCardComponent,
+    SearchSpotiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule 
+    HttpClientModule
   ],
-  providers: [WitcherService],
+  providers: [WitcherService, ApiSpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

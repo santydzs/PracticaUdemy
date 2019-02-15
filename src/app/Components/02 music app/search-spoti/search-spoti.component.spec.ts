@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WitcherContraComponent } from './witcher-contra.component';
+import { SearchSpotiComponent } from './search-spoti.component';
 
-describe('WitcherContraComponent', () => {
-  let component: WitcherContraComponent;
-  let fixture: ComponentFixture<WitcherContraComponent>;
+describe('SearchSpotiComponent', () => {
+  let component: SearchSpotiComponent;
+  let fixture: ComponentFixture<SearchSpotiComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WitcherContraComponent ]
+      declarations: [ SearchSpotiComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WitcherContraComponent);
+    fixture = TestBed.createComponent(SearchSpotiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
