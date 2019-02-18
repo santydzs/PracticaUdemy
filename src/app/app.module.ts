@@ -26,10 +26,14 @@ import { MainFatherComponent } from './Components/01 pipe section/main-father/ma
 import { MusicHomeComponent } from './Components/02 music app/music-home/music-home.component'
 import { AlbumCardComponent } from './Components/02 music app/album-card/album-card.component';
 import { SearchSpotiComponent } from './Components/02 music app/search-spoti/search-spoti.component';
+import { InputTokenComponent } from './Components/02 music app/input-token/input-token.component';
+import { TrackCardComponent } from './Components/02 music app/track-card/track-card.component';
 
 //Pipes
 import { ContadorPipe } from './Pipes/contador.pipe';
 import { DomseguroPipe } from './Pipes/domseguro.pipe';
+
+
 
 
 @NgModule({
@@ -47,7 +51,9 @@ import { DomseguroPipe } from './Pipes/domseguro.pipe';
     DomseguroPipe,
     MusicHomeComponent,
     AlbumCardComponent,
-    SearchSpotiComponent
+    SearchSpotiComponent,
+    InputTokenComponent,
+    TrackCardComponent
   ],
   imports: [
     BrowserModule,

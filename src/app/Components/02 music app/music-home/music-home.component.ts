@@ -7,15 +7,16 @@ import { ApiSpotifyService } from '../../../Services/spotify/api-spotify.service
   styleUrls: ['./music-home.component.css']
 })
 export class MusicHomeComponent implements OnInit {
-  tokeninput:string;
-  CheckToken:boolean= true;
+  CheckToken:boolean = false;
   canciones:any[] = [];
 
-  mensajeError:string;
-  codigoError:number;
-  CheckeError:boolean = false;
+  constructor(private service:ApiSpotifyService) {
+    this.CheckToken = this.service.checkToken();
 
-  constructor(private service:ApiSpotifyService) { }
+    if(this.CheckToken){
+      this.ConsultarAPI();
+    }
+  }
 
   ngOnInit() {
     
@@ -23,22 +24,19 @@ export class MusicHomeComponent implements OnInit {
 
   CargarAlbunes(data){
     this.canciones = data;
-    this.CheckToken = !this.CheckToken;
+    this.CheckToken = true;
   }
 
-  Redireccionar(error){
-    this.mensajeError = error.error.error.message;
-    this.codigoError = error.error.error.status;
-    this.CheckeError = true;
+  Redireccionar(){
+    this.service.SetToken(undefined);
+    this.CheckToken = this.service.checkToken();
   }
 
-  enviarToken(){
-    this.service.SetToken(this.tokeninput.trim());
+  ConsultarAPI(){
     this.service.Releases().subscribe(
-      data => this.CargarAlbunes(data.albums.items),
-      error => this.Redireccionar(error)
+      data => this.CargarAlbunes(data),
+      error => this.Redireccionar()
     )
-    
   }
 
 }
