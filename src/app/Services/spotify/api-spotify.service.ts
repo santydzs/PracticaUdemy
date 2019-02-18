@@ -3,8 +3,7 @@ import { HttpClient, HttpHeaders }from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const NewRelease:string = 'https://api.spotify.com/v1/browse/new-releases';
-const Search:string = 'https://api.spotify.com/v1/search';
+const ApiUrl:string = 'https://api.spotify.com/v1/'
 
 @Injectable()
 export class ApiSpotifyService {
@@ -28,7 +27,7 @@ export class ApiSpotifyService {
   }
 
   Releases(): Observable<any>{
-    return this.httpClient.get(NewRelease,{headers:this.header})
+    return this.httpClient.get(ApiUrl + 'browse/new-releases' ,{headers:this.header})
     .pipe(map( data =>{
       return data['albums'].items;
     }));
@@ -38,13 +37,13 @@ export class ApiSpotifyService {
   Search(option:number, termino:string): Observable<any>{
     switch(option){
       case 0:{
-        return this.httpClient.get(Search + '?q=' + termino +'&type=artist' + '&market=AR',{headers:this.header})
+        return this.httpClient.get(ApiUrl + 'search' + '?q=' + termino +'&type=artist' + '&market=AR',{headers:this.header})
           .pipe(map( data =>{
             return data['artists'].items;
           }));
       }
       case 1:{
-        return this.httpClient.get(Search + '?q=' + termino +'&type=track' + '&market=AR',{headers:this.header})
+        return this.httpClient.get(ApiUrl + 'search' + '?q=' + termino +'&type=track' + '&market=AR',{headers:this.header})
         .pipe(map( data =>{
           return data['tracks'].items;
         }));
