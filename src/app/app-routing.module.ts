@@ -8,6 +8,7 @@ import { WitcherPersonComponent } from './Components/witcher-person/witcher-pers
 import { MainFatherComponent } from './Components/01 pipe section/main-father/main-father.component'
 import { MusicHomeComponent } from './Components/02 music app/music-home/music-home.component';
 import { SearchSpotiComponent } from './Components/02 music app/search-spoti/search-spoti.component';
+import { DirectivComponent } from './Components/08 miscelaneos/directiv/directiv.component'
 
 const routes: Routes = [{
   path: 'calc',
@@ -36,6 +37,10 @@ const routes: Routes = [{
 {
   path: 'search-spoti',
   component: SearchSpotiComponent
+},
+{
+  path:'miscelaneos',
+  component:DirectivComponent
 },
 {
   path: '**',

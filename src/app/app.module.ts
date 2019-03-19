@@ -28,11 +28,15 @@ import { AlbumCardComponent } from './Components/02 music app/album-card/album-c
 import { SearchSpotiComponent } from './Components/02 music app/search-spoti/search-spoti.component';
 import { InputTokenComponent } from './Components/02 music app/input-token/input-token.component';
 import { TrackCardComponent } from './Components/02 music app/track-card/track-card.component';
+import { LoadingComponent } from './Components/loading/loading.component';
 
 //Pipes
 import { ContadorPipe } from './Pipes/contador.pipe';
 import { DomseguroPipe } from './Pipes/domseguro.pipe';
+import { DirectivComponent } from './Components/08 miscelaneos/directiv/directiv.component';
 
+//directivas
+import { ColorsDirective } from './Directives/colors.directive';
 
 
 
@@ -53,7 +57,10 @@ import { DomseguroPipe } from './Pipes/domseguro.pipe';
     AlbumCardComponent,
     SearchSpotiComponent,
     InputTokenComponent,
-    TrackCardComponent
+    TrackCardComponent,
+    LoadingComponent,
+    DirectivComponent,
+    ColorsDirective
   ],
   imports: [
     BrowserModule,

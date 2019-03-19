@@ -12,12 +12,17 @@ export class WitcherListComponent implements OnInit {
   error: boolean = false;
   codigo:string;
 
+  loading:boolean = true;
+
   constructor(private service:WitcherService) { }
 
   ngOnInit() {
     this.service.getall().subscribe(
       //ejecucion en caso que la respuesta sea correcta (200)
-      libros => libros.forEach(libro => this.ParseLibro(libro)),
+      libros => {
+        libros.forEach(libro => this.ParseLibro(libro));
+        this.loading = false;
+      },
 
       //ejecucion en caso que sea erronea (!200)
       err => {
