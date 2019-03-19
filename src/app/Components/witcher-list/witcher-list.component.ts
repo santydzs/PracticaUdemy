@@ -38,7 +38,13 @@ export class WitcherListComponent implements OnInit {
     lib.paginas = libro["Paginas"];
     lib.publicacion = libro["publicacion"];
     lib.id = libro["img"];
-    lib.id = lib.id.split('.')[0];
+
+    //activar en desarollo local y desactivar el siguiente
+    //lib.id = lib.id.split('.')[0];
+
+    //activar en publicado en github
+    lib.id = lib.id.split('/')[3].split('.')[0];
+
     this.libros.push(lib);
   }
 }
