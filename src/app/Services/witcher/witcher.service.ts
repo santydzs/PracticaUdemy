@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class WitcherService {
-  private Url: string = 'http://demo0726911.mockable.io/witcher';
+  private Url: string = 'https://demo0726911.mockable.io/witcher';
   
   private contratapas = {
     "libro1":"Geralt de Rivia, brujo y mutante sobrehumano, se gana la vida como cazador de monstruos en una tierra de magia y maravilla: con sus dos espadas al hombro -la de acero para hombres, y la de plata para bestias- da cuenta de estriges, manticoras, grifos, vampiros, quimeras y lobisomes, pero solo cuando amenazan la paz. Ironico, cinico, descreido y siempre errante, sus pasos lo llevan de pueblo en pueblo ofreciendo sus servicios, hallando las mas de las veces que los autenticos monstruos se esconden bajo rostros humanos. En su camino sorteara intrigas, elegira el mal menor, debatira cuestiones de precio, hollara el confin del mundo y realizara su ultimo deseo: asi comienzan las aventuras del brujo Geralt de Rivia. Andrzej Sapkowski es el gran renovador de la literatura fantastica de nuestros tiempos, un genio del lenguaje y la caracterizacion cuya prosa ya ha hechizado a millones de lectores en todo el mundo.",
