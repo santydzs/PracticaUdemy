@@ -1,0 +1,19 @@
+<app-input-token (CheckValido)="this.mostrar($event)"></app-input-token>
+
+<div class="body-music">
+<div *ngIf="this.CheckToken">
+  <div class="container">
+    <div class="row heading">
+      <div class="col">
+        <input type="text" #busqueda (keyup)="this.Buscar(busqueda.value)"
+        class="form-control" placeholder="Buscar Artista..."> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-track-card [tracks]="this.artistas" *ngIf="this.artistas != undefined"></app-track-card>
+
+</div>
+
+
